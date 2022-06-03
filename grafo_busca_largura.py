@@ -19,20 +19,20 @@ grafo = {
     'h':['g','f']
 }
 
-visitado = {} #definição de dicionário vazio para guardar os vértices visitados
+visitado = {} #definição de dicionário vazio para atribuição de vértices visitados e não visitados 
 largura = {} #definição de dicionário vazio para guardar a distância de cada vértice para origem
 pai = {} #definição de dicionário vazio para guardar o pai de cada vértice
 caminho = [] #definição de lista para guardar o percurso BFS
 queue = Queue() #inicialização de fila vazia
 
-#inicialização do vértice do grafo
+#inicialização de cada vértice do grafo
 for v in grafo.keys():
     visitado[v] = False 
     pai[v] = None
     largura[v] = -1
     
 #inicialização e definição vértice de origem
-s = 'a'
+s = 'h'
 visitado[s] = True
 largura[s] = 0
 queue.put(s) #adição do vértice na fila
@@ -52,6 +52,14 @@ while not queue.empty():
             queue.put(v) #adiciona o vértice a fila
 
 #imprime o caminho BFS
-print(caminho)
+print("BFS = ",caminho)
+#imprime o pai de cada vértice
+print("\nPai de cada vértice")
+for v in grafo.keys():
+    print(v, " ->", pai[v])
 #imprime o nível de cada vértice 
-print(largura)            
+print("\nLargura de cada vértice")
+for v in grafo.keys():
+    print(v, " ->", largura[v])
+
+         
