@@ -7,5 +7,5 @@ Nicole e
 Willian
 
 Atividades:
-Busca em Largura
+Busca em Largura e
 Busca de profundidade
